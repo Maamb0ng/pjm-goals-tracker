@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { StyleSheet, Text, TextInput, Pressable, Keyboard } from 'react-native'
+import { StyleSheet, Text, TextInput, Pressable } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useGoals } from '../../hooks/useGoals'
 import { useRouter } from 'expo-router'
@@ -9,6 +9,8 @@ const Create = () => {
   const { createGoal } = useGoals()
   const router = useRouter
  
+
+  
   const handleSubmit = async () => {
     await createGoal({
       goal,
@@ -32,7 +34,7 @@ const Create = () => {
       />
 
       <Pressable onPress={handleSubmit} style={styles.button}>
-        <Text style={{color: 'white'}}>Add New Goal</Text>
+        <Text style={{color: 'black'}}>Add New Goal</Text>
       </Pressable>
     </SafeAreaView>
   )
@@ -45,9 +47,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#DEC6C3',
   },
   title: {
-    fontSize: 25,
+    fontSize: 30,
+    fontWeight:'bold',
   },
   input: {
     width: 300,
@@ -55,12 +59,15 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 8,
     marginVertical: 40,
+    fontWeight:'bold',
+    
   },
   button: {
     padding: 18,
-    backgroundColor: '#16b87cff',
+    backgroundColor:'#1d8533ff',
     color: 'white',
-    borderRadius: 9,
+    borderRadius: 8,
+    
+    
   }
 })
-
